@@ -1,0 +1,85 @@
+*
+{
+    padding:0;
+    margin:0;
+    box-sizing: border-box; /*makes the size of the element adjust itself when the border is altered*/
+}
+
+#wrapper
+{
+    /* overflow-x: hidden; */
+    overflow-y: auto;
+    height: 100vh;
+    background-color: #fcfbfb;
+}
+.container
+{
+    height:100%;
+    width:1200px;
+    margin:0 auto;
+    padding:20px;
+}
+
+h1
+{
+    text-align: center;
+    font-size:4rem;
+    margin: 30px 0;
+}
+
+.gallery  /* FLEX CONTAINER */
+{
+    display:flex; 
+    flex-wrap:wrap;
+    justify-content:space-between; /*to get the space between the flex items*/
+}
+
+.card
+{
+    width:32%;
+    position: relative; /*position made relative so that the figcaption can be made absolute over it*/
+    margin-bottom: 20px;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.card img
+{
+    width:100%; /*the image will adjust itself in the defined width of 32% of 1200px of the parent content*/
+    filter:grayscale(100%); /* makes the image as grayscale or black*/
+    box-shadow: 0px 0 20px #000;
+}
+
+.card:hover
+{
+    transform:scale(1.03);  /* Enlarge the image when card class is hovered*/
+    filter:drop-shadow(0 0 15px #333); /* An effect of shadow will be created*/
+    transition:0.5s; /* time under which the effect will be shown*/
+}
+
+img:hover
+{
+    filter:grayscale(0);
+}
+
+.card figcaption
+{
+    position:absolute;
+    bottom:0;
+    left:0;
+    padding:25px;
+    width:100%;
+    height:20%;
+    font-size: 20px;
+    font-weight: 500;
+    color:#fcfbfb;
+    opacity:0; /*hides the image(1,2,3...) line*/
+    border-radius: 0 0 10px 10px;
+    transition: 0.5s;
+}
+
+.card:hover figcaption
+{
+    opacity: 1; /*brings the image(1,2,3...) back when we hover over it*/
+    transform: scale(1.03);
+}
